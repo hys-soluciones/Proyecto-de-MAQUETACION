@@ -1,0 +1,47 @@
+/* todo lo referente a la seccion de Servicios */
+/* **utilities** */
+.bg-gray-light {
+  background-color: var(--gray-light-color);
+}
+.section-title {
+  border-top: thin solid var(--first-color);
+  border-bottom: thin solid var(--first-color);
+  margin: 2rem auto;
+  padding: 0.5rem 1rem;
+  width: 250px;
+  text-align: center;
+  color: var(--title-color);
+}
+
+/* **site-styles** */
+.service-card {
+  margin: 1rem auto;
+  padding: 1rem;
+  text-align: center;
+}
+.service-card h3 {
+  color: var(--title-color);
+}
+.service-card svg {
+  margin-bottom: 1.25rem;
+  fill: var(--first-color);
+}
+@media (min-width: 768px) {
+  .services > .container {
+    display: grid;
+    grid-template-columns: repeat(2, 45%);
+    justify-content: space-between;
+    align-content: center;
+  }
+  .services .section-title {
+    grid-column: span 2;
+  }
+}
+@media (min-width: 1024px) {
+  .services > .container {
+    grid-template-columns: repeat(3, 30%);
+  }
+  .services .section-title {
+    grid-column: span 3;
+  }
+}
