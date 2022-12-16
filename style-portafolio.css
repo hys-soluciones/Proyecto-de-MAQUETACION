@@ -1,0 +1,130 @@
+/* Todo lo referente a la seccion de portafolio */
+
+/* ***Syte Styles*** */
+.portfolio-card {
+  position: relative; /* por que la informacion del estado jover la posicionamos de manera absoluta */
+  width: 100%;
+  margin: 0 auto; /* Para que las imagenes esten una detras de la otra */
+  display: block; /* para que esten uno debajo del otro ya que los enlaces estan en linea */
+}
+/* Estilos a la imagen */
+.portfolio-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Para evitar que las imagenes se distorcionen con respecto asu aspecto */
+}
+/* El aside donde viene la informacion */
+.portfolio-card-info {
+  position: absolute; /* Poruqe su elemento padre esta en relative */
+  /* para que este sobre su elemento padre */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 1rem;
+  background-color: var(--first-alpha-color);
+  color: var(--white-color);
+  opacity: 0;
+  pointer-events: none;
+}
+.portfolio-card:hover .portfolio-card-info {
+  opacity: 1;
+  pointer-events: all;
+  transition: all 1s ease-in-out;
+}
+.portfolio-card-info div {
+  border: thin solid var(--white-color);
+  padding: 1rem;
+  width: 100%;
+  height: 100%;
+}
+@media (min-width: 768px) {
+  .portfolio > .container {
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    justify-content: space-between;
+    align-content: center;
+  }
+  .portfolio > .container h2 {
+    grid-column: span 2;
+  }
+}
+@media (min-width: 1024px) {
+  .portfolio > .container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: space-between;
+    align-content: center;
+  }
+  .portfolio > .container h2 {
+    grid-column: span 3;
+  }
+}
+/* **Seccion de componentes** /
+/* todo Etiquetado  */ /* de una ventana modal  */
+.modal {
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--black-alpha-color);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 1s;
+}
+.modal-content {
+  position: relative;
+}
+.modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+.modal-close svg {
+  width: 3rem;
+  height: 3rem;
+  fill: var(--first-color);
+}
+/* busca todos elementos que tengan la palabra trabajo y que este en el target */
+.modal[id|="trabajo"]:target {
+  opacity: 1;
+  pointer-events: auto;
+}
+.portfolio-modal {
+  padding: 1rem;
+  max-width: 300px;
+  font-size: 0.8rem;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--white-color);
+}
+.portfolio-modal h3 {
+  padding: 1.5rem 0;
+  margin: 1rem auto;
+  border-bottom: medium solid var(--first-color);
+  color: var(--title-color);
+}
+.portfolio-details {
+  display: grid;
+  grid-template-columns: 40% 60%;
+  grid-auto-rows: 2rem;
+}
+.portfolio-details b {
+  color: var(--first-color);
+}
+@media (min-width: 768px) {
+  .portfolio-modal {
+    flex-direction: row;
+    max-width: 800px;
+  }
+  .portfolio-info {
+    padding: 1rem;
+    margin: 1rem;
+    align-self: center;
+  }
+}
