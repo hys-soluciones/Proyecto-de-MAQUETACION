@@ -1,0 +1,78 @@
+/*todo Reutilizamos todo lo que hicimos de la hero-image del home y agregamos lo que hacia falta para la secion de testimonios */
+/* *****Componentes***** */
+/* **Carrusel** */
+@keyframes carousel-slide {
+  /* Este  @keyframes es para darle animacion a los slides de forma automatica*/
+  0% {
+    transform: translateX(0%);
+  }
+  25% {
+    transform: translateX(-25%);
+  }
+  50% {
+    transform: translateX(-50%);
+  }
+  75% {
+    transform: translateX(-75%);
+  }
+}
+.carousel {
+  margin: 2rem auto;
+  padding: 2rem 0;
+  max-width: 800px;
+  text-align: center;
+  overflow-x: hidden; /* Para que no se vean los slides de los lados */
+  background-color: var(--carousel-bg-color);
+}
+
+.carousel .slides {
+  padding-left: 0; /* Para centrar el contenido de las targetas */
+  width: 400%;
+  display: flex;
+  list-style: none; /* Le quitamos la buled a los li */
+  transition: transform 0.5s ease-in-out;
+  animation: carousel-slide 12s ease-in-out 3s; /* Con esta linea activamos la animacion del @keyframes por 12s al iniciar con un retrazo de 3s*/
+}
+.carousel input {
+  display: none;
+}
+
+.carousel label {
+  border: medium solid var(--gray-dark-color);
+  border-radius: 50%;
+  margin: 0 0.25rem;
+  display: inline-block;
+  width: 0.75rem;
+  height: 0.75rem;
+  cursor: pointer;
+}
+/* Para darle movimiento a los slides */
+#slide-1:checked ~ .slides {
+  transform: translateX(0%);
+}
+#slide-2:checked ~ .slides {
+  transform: translateX(-25%);
+}
+#slide-3:checked ~ .slides {
+  transform: translateX(-50%);
+}
+#slide-4:checked ~ .slides {
+  transform: translateX(-75%);
+}
+/* PARA DARLE EL COLOR A LAS LAIBOL */
+/* Cuando el slide-? este checado, en el slides-nav la label que tenga el #dot-? aplicale un color de fondo */
+#slide-1:checked ~ .slides-nav label#dot-1,
+#slide-2:checked ~ .slides-nav label#dot-2,
+#slide-3:checked ~ .slides-nav label#dot-3,
+#slide-4:checked ~ .slides-nav label#dot-4 {
+  background-color: var(--gray-dark-color);
+}
+/* ***Utilites*** */
+.avatar {
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+}
+.text-first-color {
+  color: var(--first-color);
+}
