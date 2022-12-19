@@ -1,0 +1,123 @@
+/* Todo lo referente a la section de contacto */
+/* **Site Styles** */
+.contact-card {
+  margin: 1rem auto;
+  padding: 1rem;
+  width: 100%;
+  height: 144px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+.contact-card > svg {
+  width: 2rem;
+  height: 2rem;
+  fill: var(--first-color);
+}
+.contact-card > small {
+  margin-top: 1rem;
+}
+
+.social-media a {
+  padding: 0 0.4rem;
+  text-decoration: none;
+}
+.social-media svg {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .contact-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 48%);
+    justify-content: space-between;
+  }
+}
+@media (min-width: 1024px) {
+  .contact-cards {
+    grid-template-columns: repeat(4, 24%);
+    justify-content: space-between;
+  }
+}
+/* Todo lo referente al formulario */
+/* **Componentes** */
+.contact-form {
+  margin: 2rem auto;
+  padding: 1rem;
+  max-width: 800px;
+}
+.contact-form > * {
+  padding: 0.5rem;
+  margin: 1rem auto;
+  display: block;
+  width: 100%;
+}
+.contact-form input,
+.contact-form textarea {
+  font-family: var(--font);
+}
+
+.contact-form input {
+  border: 0;
+  padding-left: 0;
+  border-bottom: thin solid var(--gray-dark-color);
+}
+
+.contact-form textarea {
+  border: thin solid var (--gray-dark-color);
+  resize: none; /* para desaparecer el triangulito de la textarea */
+}
+
+.contact-form input[type="submit"] {
+  margin-top: 0;
+  cursor: pointer;
+  transition: all 0.5s ease-out;
+}
+
+.contact-form input[type="submit"]:hover {
+  opacity: 75%;
+}
+/* para cambiar el color de letra */
+.contact-form *::placeholder {
+  color: var(--gray-dark-color);
+}
+.modal#gracias:target {
+  opacity: 1;
+  pointer-events: auto;
+}
+.contact-form-response {
+  padding: 1rem;
+  width: 400px;
+  text-align: center;
+  background-color: var(--white-color);
+}
+.contact-form-response svg {
+  margin-top: 2rem;
+  width: 4rem;
+  height: 4rem;
+  fill: var(--first-color);
+}
+@media (min-width: 1024px) {
+  .contact-form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 1rem;
+    column-gap: 1rem; /* Para separar los dos columnas */
+  }
+  .contact-form input,
+  .contact-form textarea {
+    font-size: 1rem;
+  }
+  .contact-form textarea,
+  .contact-form-loader {
+    grid-column: span 2; /* Para que ocupe el textarea las dos columnas */
+  }
+  .contact-form input[type="submit"] {
+    margin-left: 0;
+  }
+  .none {
+    display: none;
+  }
+}
