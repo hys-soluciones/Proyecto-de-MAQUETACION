@@ -99,6 +99,9 @@
   height: 4rem;
   fill: var(--first-color);
 }
+.none {
+  display: none;
+}
 @media (min-width: 1024px) {
   .contact-form {
     display: grid;
